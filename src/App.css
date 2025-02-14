@@ -1,0 +1,91 @@
+html, body {
+  background-color: #ffdee3
+}
+.custom-btn {
+  background-color: #ff6f77;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.custom-btn:hover {
+  background-color: #ff3334;
+}
+/* Main Layout */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scrolling Container - Prevent Overlap */
+.scrolling-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 300px; /* Matches image height */
+  display: flex;
+  align-items: center;
+}
+
+/* Image Row */
+.image-row {
+  display: flex;
+  width: calc(200%);
+  animation: infiniteScroll 10s linear infinite;
+}
+
+/* Top Row */
+.top-row {
+  position: absolute;
+  top: 10%; /* Ensures it stays at the top */
+  animation-name: moveLeft;
+}
+
+/* Bottom Row */
+.bottom-row {
+  position: absolute;
+  bottom: 10%; /* Ensures it stays at the bottom */
+  animation-name: moveRight;
+}
+
+/* Image Styling */
+.image-row img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+/* Centered Content */
+.centered-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  text-align: center;
+  border-radius: 15px;
+  z-index: 2;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 50%;
+  position: relative;
+  margin: 20px 0; /* Add margin to avoid overlap */
+}
+
+/* Infinite Scrolling Animations */
+@keyframes moveLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+
+
